@@ -6,7 +6,10 @@ import subprocess, threading
 
 FILE_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_DIR = os.path.dirname(FILE_DIR)
+STATE_DIR = os.path.join(FILE_DIR, "state") 
 sys.path.append(REPO_DIR)
+if not os.path.exists(STATE_DIR):
+    os.mkdir(STATE_DIR)
 import time
 
 
@@ -33,8 +36,8 @@ class AutoAPI:
         self.openai_key = openai_key
         hex = uuid.uuid4().hex
         print(hex)
-        self.state_file = os.path.join(FILE_DIR, "state", f"state_{hex}.json")
-        self.log_file = os.path.join(FILE_DIR, "state", f"log_{hex}.json")
+        self.state_file = os.path.join(STATE_DIR, f"state_{hex}.json")
+        self.log_file = os.path.join(STATE_DIR, f"log_{hex}.json")
 
         newline = "\n"
         with open(os.path.join(REPO_DIR, "ai_settings.yaml"), "w") as f:
