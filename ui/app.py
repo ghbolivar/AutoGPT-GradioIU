@@ -18,7 +18,7 @@ CSS = """
 with gr.Blocks(css=CSS) as app:
     with gr.Column() as setup_pane:
         gr.Markdown(f"""# Auto-GPT
-        1. Duplicate this Space: <a href="https://huggingface.co/spaces/{os.getenv('SPACE_ID')}?duplicate=true"><img style="display: inline; margin-top: 0em; margin-bottom: 0em" src="https://bit.ly/3gLdBN6" alt="Duplicate Space" /></a>
+        1. Duplicate this Space: <a href="https://huggingface.co/spaces/{os.getenv('SPACE_ID')}?duplicate=true"><img style="display: inline; margin-top: 0em; margin-bottom: 0em" src="https://bit.ly/3gLdBN6" alt="Duplicate Space" /></a> This will **NOT** work without duplication!
         2. Enter your <a href="https://platform.openai.com/account/api-keys">OpenAI API Key</a> below.
         """)
         with gr.Row():
