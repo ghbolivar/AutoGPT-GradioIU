@@ -142,4 +142,4 @@ with gr.Blocks(css=CSS) as app:
 
     download_btn.click(download_all_files).then(None, _js=utils.DOWNLOAD_OUTPUTS_JS)
 
-app.queue().launch(file_directories=[OUTPUT_DIR])
+app.queue(concurrency_count=20).launch(file_directories=[OUTPUT_DIR])
